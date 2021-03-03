@@ -1,43 +1,33 @@
 $(function() {
 
+    var dictionary=[{value:'e-learning',data:{category:'E-learning'}},{value:'dydaktyka',data:{category:'E-learning'}},{value:'e-nauczanie',data:{category:'E-learning'}},{value:'zdalna dydaktyka',data:{category:'E-learning'}},{value:'zdalne nauczanie',data:{category:'E-learning'}},{value:'nauczanie',data:{category:'E-learning'}},{value:'kampus',data:{category:'E-learning'}},{value:'humanistyka cyfrowa',data:{category:'Humanistyka cyfrowa'}},{value:'projekty cyfrowe',data:{category:'Humanistyka cyfrowa'}},{value:'humanistyka',data:{category:'Humanistyka cyfrowa'}},{value:'projekty',data:{category:'Humanistyka cyfrowa'}},{value:'usługi cyfrowe',data:{category:'Usługi cyfrowe'}},{value:'e-usługi',data:{category:'Usługi cyfrowe'}},{value:'strony',data:{category:'Usługi cyfrowe'}},{value:'www',data:{category:'Usługi cyfrowe'}},{value:'szablony',data:{category:'Usługi cyfrowe'}},{value:'fid',data:{category:'Usługi cyfrowe'}},{value:'fundusz innowacji dydaktycznych',data:{category:'Usługi cyfrowe'}},{value:'zdjęcia',data:{category:'Usługi cyfrowe'}},{value:'wideo',data:{category:'Usługi cyfrowe'}},{value:'video',data:{category:'Usługi cyfrowe'}},{value:'identyfikacja graficzna',data:{category:'Usługi cyfrowe'}},{value:'grafika',data:{category:'Usługi cyfrowe'}},{value:'film',data:{category:'Usługi cyfrowe'}},{value:'projekty strategiczne uczelni',data:{category:'Projekty strategiczne uczelni'}},{value:'idub',data:{category:'Projekty strategiczne uczelni'}},{value:'inicjatywa doskonałości - uczelnia badawcza',data:{category:'Projekty strategiczne uczelni'}},{value:'dariah',data:{category:'Projekty strategiczne uczelni'}},{value:'digital research infrastructure for the arts and humanities',data:{category:'Projekty strategiczne uczelni'}},{value:'dariah-pl',data:{category:'Projekty strategiczne uczelni'}},{value:'zip',data:{category:'Projekty strategiczne uczelni'}},{value:'zintegrowany program rozwoju uw',data:{category:'Projekty strategiczne uczelni'}},{value:'poir',data:{category:'Projekty strategiczne uczelni'}},{value:'cyfrowa infrastruktura badawcza dla humanistyki i nauk o sztuce dariah-pl',data:{category:'Projekty strategiczne uczelni'}},{value:'zip',data:{category:'Projekty strategiczne uczelni'}},{value:'time machine organization',data:{category:'Projekty strategiczne uczelni'}},{value:'konsultacje',data:{category:'konsultacje'}},{value:'działalność ekspercka',data:{category:'konsultacje'}},{value:'ekspertyza',data:{category:'konsultacje'}},{value:'spotkanie',data:{category:'konsultacje'}},{value:'pomoc',data:{category:'konsultacje'}},{value:'wsparcie',data:{category:'konsultacje'}},{value:'szkolenia',data:{category:'szkolenia i warsztaty'}},{value:'warsztaty',data:{category:'szkolenia i warsztaty'}},{value:'kurs',data:{category:'szkolenia i warsztaty'}},{value:'zajęcia',data:{category:'szkolenia i warsztaty'}}];
 
-    var dictionary = [
-        { value: 'e-learning', data: { category: 'elearning' } },
-        { value: 'dydaktyka', data: { category: 'elearning' } },
-        { value: 'e-nauczanie', data: { category: 'elearning' } },
-        { value: 'zdalna dydaktyka', data: { category: 'elearning' } },
-        { value: 'zdalne nauczanie', data: { category: 'elearning' } },
-        { value: 'nauczanie', data: { category: 'elearning' } },
-        { value: 'kampus', data: { category: 'elearning' } },
-        { value: 'humanistyka cyfrowa', data: { category: 'humanistyka cyfrowa' } },
-        { value: 'projekty cyfrowe', data: { category: 'humanistyka cyfrowa' } },
-        { value: 'humanistyka', data: { category: 'humanistyka cyfrowa' } },
-        { value: 'projekty', data: { category: 'humanistyka cyfrowa' } },
-    ];
-
-    var answers = [
-        {'id' : 1, 'category': 'elearning', 'text': 'Chcę dowiedzieć się więcej o działaniach CKC', 'uri' : 'https://dev.owd.io/ckc/dzialalnosc/co-robimy/e-learning/'},
-        {'id' : 2, 'category': 'elearning', 'text': 'Chcę zalogować się na platformę', 'uri' : 'https://elearning.ckc.uw.edu.pl/'},
-        {'id' : 3, 'category': 'elearning', 'text': 'Chcę poczytać artykuły na ten tema', 'uri' : 'https://dev.owd.io/ckc/?post_type=article&article_area=wokol-moodla&author_id=&article_type='},
-        {'id' : 4, 'category': 'elearning', 'text': 'Chcę wziąć udział w szkoleniach', 'uri' : 'https://dev.owd.io/ckc/dzialalnosc/co-robimy/szkolenia-i-warsztaty/ '},
-        {'id' : 5, 'category': 'elearning', 'text': 'Chcę dowiedzieć się więcej o działaniach CKC', 'uri' : 'https://dev.owd.io/ckc/dzialalnosc/co-robimy/humanistyka-cyfrowa/'},
-        {'id' : 6, 'category': 'humanistyka cyfrowa', 'text': 'Chcę wziąć udział w warsztatach', 'uri' : 'https://dev.owd.io/ckc/dzialalnosc/co-robimy/szkolenia-i-warsztaty/'},
-        {'id' : 7, 'category': 'humanistyka cyfrowa', 'text': 'Chcę poczytać artykuły na ten temat', 'uri' : 'https://dev.owd.io/ckc/?post_type=article&article_area=dziedzina-1&author_id=&article_type='},
-        {'id' : 8, 'category': 'humanistyka cyfrowa', 'text': 'Chcę zobaczyć projekty zrealizowane przez CKC', 'uri' : 'https://dev.owd.io/ckc/projekty/'}
-    ];
+    var answers=[{"id":1,"category":"E-learning","text":"Dowiedz się więcej o działaniach CKC UW","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/e-learning/","title":"E-learning w CKC UW"},{"id":2,"category":"E-learning","text":"Zaloguj się na platformę Kampus","uri":"https://elearning.ckc.uw.edu.pl/","title":"Kampus UW"},{"id":3,"category":"E-learning","text":"Artykuły na temat e-learningu","uri":"https://dev-ckc.ckc.uw.edu.pl/?post_type=article&article_area=wokol-moodla&article_author=&article_type=","title":"Czytelnia: Wokól Moodla"},{"id":4,"category":"E-learning","text":"Weź udział w szkoleniach","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/szkolenia-i-warsztaty/","title":"Szkolenia i warsztaty"},{"id":5,"category":"E-learning","text":"Zgloś problem dotyczący  platform Kampus","uri":"mailto:pomoc-ckc@uw.edu.pl","title":"pomoc-ckc@uw.edu.pl"},{"id":6,"category":"Humanistyka cyfrowa","text":"Dowiedz się więcej o działaniach CKC UW","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/humanistyka-cyfrowa/","title":"Humanistyka cyfrowa w CKC UW"},{"id":7,"category":"Humanistyka cyfrowa","text":"Weź udział w szkoleniach","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/szkolenia-i-warsztaty/","title":"Szkolenia i warsztaty"},{"id":8,"category":"Humanistyka cyfrowa","text":"Artykuły na temat humanistyki cyfrowej","uri":"https://dev-ckc.ckc.uw.edu.pl/?post_type=article&article_area=humanistyka-cyfrowa&article_author=&article_type=","title":"Czytelnia: Humanistyka cyfrowa"},{"id":9,"category":"Humanistyka cyfrowa","text":"Zobacz projekty zrealizowane przez CKC UW","uri":"https://dev-ckc.ckc.uw.edu.pl/projekty/","title":"Projekty"},{"id":10,"category":"Usługi cyfrowe","text":"Zobacz projekty zrealizowane przez CKC UW","uri":"https://dev-ckc.ckc.uw.edu.pl/projekty/","title":"Projekty"},{"id":11,"category":"Usługi cyfrowe","text":"Usługi oferowane przez CKC UW","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/uslugi-cyfrowe/","title":"Usługi cyfrowe"},{"id":12,"category":"Usługi cyfrowe","text":"Zamów szablon uniwersyteckiej strony WWW","uri":"https://szablonystron.ckc.uw.edu.pl/","title":"Ogólnouniwersyteckie szablony stron WWW"},{"id":13,"category":"Projekty strategiczne uczelni","text":"Inicjatywa Doskonałości – Uczelnia Badawcza: Humanistyka cyfrowa","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/projekty-strategiczne-uczelni/","title":"Projekty strategiczne uczelni"},{"id":14,"category":"Projekty strategiczne uczelni","text":"IDUB","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/projekty-strategiczne-uczelni/","title":""},{"id":15,"category":"Projekty strategiczne uczelni","text":"POiR: Cyfrowa infrastruktura badawcza dla humanistyki i nauk o sztuce DARIAH-PL","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/projekty-strategiczne-uczelni/","title":"Projekty strategiczne uczelni"},{"id":16,"category":"Projekty strategiczne uczelni","text":"Program zintegrowanych działań na rzecz rozwoju Uniwersytetu Warszawskiego (ZIP)","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/projekty-strategiczne-uczelni/","title":"Projekty strategiczne uczelni"},{"id":17,"category":"Projekty strategiczne uczelni","text":"Time Machine Organization","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/projekty-strategiczne-uczelni/","title":"Projekty strategiczne uczelni"},{"id":18,"category":"Projekty strategiczne uczelni","text":"DARIAH-PL","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/projekty-strategiczne-uczelni/","title":"Projekty strategiczne uczelni"},{"id":19,"category":"Konsultacje","text":"Dowiedz się więcej","uri":"https://dev.owd.io/ckc/dzialalnosc/co-robimy/dzalalnosc-ekspercka/","title":"Działalność ekspercka"},{"id":20,"category":"Konsultacje","text":"Umów się na konsultacje","uri":"https://dev-ckc.ckc.uw.edu.pl/kontakt/","title":"Kontakt"},{"id":21,"category":"Szkolenia i warszataty","text":"Weź udział w szkoleniach","uri":"https://dev-ckc.ckc.uw.edu.pl/dzialalnosc/co-robimy/szkolenia-i-warsztaty/","title":"Szkolenia i warsztaty"},{"id":22,"category":"Szkolenia i warszataty","text":"Zaproponuj temat szkolenia","uri":"https://dev-ckc.ckc.uw.edu.pl/kontakt/","title":"Kontakt"}];
 
     let options = {
-        'groupBy' : 'category'
+        'groupBy' : 'category',
+        'showNoSuggestionNotice' : false
     };
-
 
     $('#autocomplete').autocomplete({
         lookup: dictionary,
+        onSearchStart: function(query) {
+            // delete?
+            $('#response ul').empty();
+        },
+        onSearchComplete: function(query,suggestions) {
+            if(suggestions.length == 0) {
+                let li = '<li class="not-found">(⊙_☉) Nie znaleźliśmy żadnej podpowiedzi. Spróbuj poprawić zapytanie albo wyszukać tę frazę <a href="https://dev-ckc.ckc.uw.edu.pl/?s='+query+'" title="Kliknij, aby wyszukać">'+query+'</a> w zasobach witryny CKC.</li>';
+                $('#response ul').empty();    
+                $(li).appendTo('#response ul');
+            }
+        },
         onSelect: function (suggestion) {
             let response = answers.filter(x => x.category == suggestion.data.category)
             $('#response ul').empty();
+            $('#autocomplete').removeAttr('value');
             response.forEach(r => {
-                r.li = '<li><a href="' + r.uri + '">' +r.text+ '</a></li>';
+                r.li = '<li><a href="' + r.uri + '" title="'+r.title+'">' +r.text+ '</a></li>';
                 $(r.li).appendTo('#response ul');
             });
         }

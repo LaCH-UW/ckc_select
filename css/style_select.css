@@ -40,3 +40,7 @@
 #response ul li a:hover {
     color: #FF6900;
 }
+
+#response .not-found a {
+	font-weight: bold;
+}
